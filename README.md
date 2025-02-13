@@ -52,8 +52,29 @@ rsync -a --checksum --verbose --delete --progress --exclude '.*' /home/qshar/ /t
 30 12 * * * /bin/bash /home/qshar/every_day_backup_gribanov.sh /home/qshar/ /tmp/backup
 
 ```
+
+#### Файл crontab: [every_day_backup_gribanov.sh](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/files/every_day_backup_gribanov.sh)
+```bash
+#!/bin/bash
+copy=$1
+paste=$2
+
+if [ ! -d $copy ]; then
+	echo -e "\033[31m----- | $(date +"%Y-%m-%d | %H:%M:%S") | Бэкап выполнен неудачно! | Исходный каталог не существует. | -----\033[0m" >> /var/log/rsync-cron-$(date +"%Y-%m-%d").log
+elif [ ! -d $paste ]; then
+	echo -e "\033[31m----- | $(date +"%Y-%m-%d | %H:%M:%S") | Бэкап выполнен неудачно! | Целевой каталог не существует. | -----\033[0m" >> /var/log/rsync-cron-$(date +"%Y-%m-%d").log
+else
+	rsync -a --checksum --verbose --delete --progress --exclude '.*' $copy $paste >> /var/log/rsync-cron-$(date +"%Y-%m-%d").log
+        echo -e "\033[32m----- | $(date +"%Y-%m-%d | %H:%M:%S") | Бэкап выполнен удачно! | -----\033[0m" >> /var/log/rsync-cron-$(date +"%Y-%m-%d").log
+fi
+
+```
+
 ![Rsync_006](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_006.png)
 ![Rsync_007](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_007.png)
+
+## Проверка работоспособности скрипта:
+
 ![Rsync_008](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_008.png)
 ![Rsync_009](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_009.png)
 ![Rsync_010](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_010.png)
