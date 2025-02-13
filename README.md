@@ -73,7 +73,7 @@ fi
 ![Rsync_006](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_006.png)
 ![Rsync_007](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_007.png)
 
-## Проверка работоспособности скрипта:
+#### Проверка работоспособности скрипта:
 
 ![Rsync_008](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_008.png)
 ![Rsync_009](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_009.png)
