@@ -80,3 +80,15 @@ fi
 ![Rsync_010](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_010.png)
 ![Rsync_011](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_011.png)
 ![Rsync_012](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_012.png)
+
+### Задание 3*
+- Настройте ограничение на используемую пропускную способность rsync до 1 Мбит/c
+- Проверьте настройку, синхронизируя большой файл между двумя серверами
+- На проверку направьте команду и результат ее выполнения в виде скриншота
+  
+```bash
+rsync -avP --bwlimit=128 --checksum /home/qshar/test2025.txt qshar@192.168.1.27:/tmp/backup/test2025.txt
+```
+![Rsync_013](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_013.png)
+![Rsync_014](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_014.png)
+![Rsync_015](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_015.png)
