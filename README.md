@@ -7,7 +7,15 @@
 - Необходимо сделать так, чтобы rsync подсчитывал хэш-суммы для всех файлов, даже если их время модификации и размер идентичны в источнике и приемнике.
 - На проверку направить скриншот с командой и результатом ее выполнения
 
-
+### *Решение:*
+```bash
+rsync -a --checksum --verbose --delete --progress --exclude '.*' /home/qshar/ /tmp/backup
+```
+![Rsync_001](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_001.png)
+![Rsync_002](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_002.png)
+![Rsync_003](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_003.png)
+![Rsync_004](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_004.png)
+![Rsync_005](https://github.com/Qshar1408/sflt-homeworks-03/blob/main/img/sflt03_005.png)
 
 ### Задание 2
 - Написать скрипт и настроить задачу на регулярное резервное копирование домашней директории пользователя с помощью rsync и cron.
